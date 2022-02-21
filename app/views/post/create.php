@@ -49,19 +49,12 @@ namespace app\views\post;
                 <label>User_id</label>
                 <input type="number" class="form-control" name="user_id">
             </div>
-<!--            <div>-->
-<!--                <label>Category_id</label>-->
-<!--                <input type="number" class="form-control" name="cate_id">-->
-<!--            </div>-->
-            <label for="cate_id">Chose Parent Category</label>
+            <label for="cate_id">Chose Category</label>
             <select name="cate_id">
                 <?php
                     echo $categories;
                 ?>
             </select>
-<!--            --><?php
-//            print_r($categories);
-//            ?>
         </div>
         <div>
             <button id="create" class="btn btn-primary">Create</button>

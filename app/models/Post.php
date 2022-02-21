@@ -87,6 +87,46 @@ class Post
         $this->user_id = htmlspecialchars(strip_tags($this->user_id));
         $this->cate_id = htmlspecialchars(strip_tags($this->cate_id));
 
+//        $data = [
+//            'title'=>$this->title,
+//            'excerpt'=>$this->excerpt,
+//            'content'=>$this->content,
+//            'image'=>$this->image,
+//            'user_id'=>$this->user_id,
+//            'cate_id'=>$this->cate_id
+//        ];
+
+        $stmt->bindParam(':title', $this->title);
+        $stmt->bindParam(':excerpt', $this->excerpt);
+        $stmt->bindParam(':content', $this->content);
+        $stmt->bindParam(':image', $this->image);
+        $stmt->bindParam(':user_id', $this->user_id);
+        $stmt->bindParam(':cate_id', $this->cate_id);
+
+
+        if ($stmt->execute()) {
+            return true;
+        }
+
+        printf("Error: %s.\n", $stmt->error);
+
+        return false;
+    }
+
+    public function update()
+    {
+        $query = 'UPDATE articles SET title = :title, excerpt = :excerpt, content = :content, image = :image, user_id = :user_id, cate_id = :cate_id WHERE article_id = :article_id';
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->article_id = htmlspecialchars(strip_tags($this->article_id));
+        $this->title = htmlspecialchars(strip_tags($this->title));
+        $this->excerpt = htmlspecialchars(strip_tags($this->excerpt));
+        $this->content = htmlspecialchars(strip_tags($this->content));
+        $this->image = htmlspecialchars(strip_tags($this->image));
+        $this->user_id = htmlspecialchars(strip_tags($this->user_id));
+        $this->cate_id = htmlspecialchars(strip_tags($this->cate_id));
+
         $data = [
             'title'=>$this->title,
             'excerpt'=>$this->excerpt,
@@ -114,6 +154,8 @@ class Post
 
         return false;
     }
+
+
 
 //    public function update(){
 //

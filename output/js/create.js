@@ -81,17 +81,11 @@ function handleCreateForm() {
     var createBtn = document.querySelector('#create');
     createBtn.onclick = function() {
         var title = document.querySelector('input[name="title"]').value;
-        console.log(title);
         var excerpt = document.querySelector('input[name="excerpt"]').value;
-        console.log(excerpt);
         var content = document.querySelector('textarea[name="content"]').value;
-        console.log(content);
         var image = document.querySelector('input[name="image"]').value;
-        console.log(image);
         var user_id = document.querySelector('input[name="user_id"]').value;
-        console.log(user_id);
         var cate_id = document.querySelector('select[name="cate_id"]').value;
-        console.log(cate_id);
 
         var formData = {
             title: title,

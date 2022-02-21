@@ -12,8 +12,12 @@ require_once(dirname(__FILE__) . '/BaseController.php');
 
 class HomeController extends BaseController
 {
+    public $category;
     function __construct()
     {
+        $database = new Database();
+        $db = $database->connect();
+        $this->category = new Category($db);
     }
     public function index()
     {
@@ -33,13 +37,12 @@ class HomeController extends BaseController
     }
     public function create()
     {
-        $database = new Database();
-        $db = $database->connect();
-        $this->category = new Category($db);
+//        $database = new Database();
+//        $db = $database->connect();
+//        $this->category = new Category($db);
         $categories = $this->category->getCategories();
         
         $listCate = $this->showCategories($categories);
-//        print_r($listCate);
         $data= [
             'categories'=>$listCate
         ];
@@ -56,7 +59,15 @@ class HomeController extends BaseController
     }
     public function CatDashborad()
     {
-        return $this->view('dashbroad.CategoryDashborad');
+        $categories = $this->category->getCategories();
+
+        $listCate = $this->showCategories($categories);
+        $data= [
+            'categories'=>$listCate
+        ];
+        print_r($categories);
+//        print_r($data['categories']);
+        return $this->view('dashbroad.CategoryDashborad',$data);
     }
     public function PostDashborad()
     {
