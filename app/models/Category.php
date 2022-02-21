@@ -75,15 +75,18 @@ public $parent_id;
 
     public function create()
     {
-    $query = 'INSERT INTO ' .
-      $this->table . '
-    SET
-      name = :name';
+//    $query = 'INSERT INTO ' .
+//      $this->table . '
+//    SET
+//      name = :name';
+        $query = 'INSERT INTO categories (cate_name , parent_id) VALUE (:cate_name, :parent_id)';
     $stmt = $this->conn->prepare($query);
 
-    $this->name = htmlspecialchars(strip_tags($this->name));
+    $this->cate_name = htmlspecialchars(strip_tags($this->cate_name));
+    $this->parent_id = htmlspecialchars(strip_tags($this->parent_id));
 
-    $stmt->bindParam(':name', $this->name);
+    $stmt->bindParam(':cate_name', $this->cate_name);
+    $stmt->bindParam(':parent_id', $this->parent_id);
 
     if ($stmt->execute()) {
       return true;

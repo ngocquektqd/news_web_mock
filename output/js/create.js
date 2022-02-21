@@ -67,7 +67,8 @@ function handleDeleteCourse(id) {
 function createCourse(data, callback) {
     var options = {
         method: 'POST',
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        // body: formData,
     }
     fetch(coursesCreateAPI, options)
         .then(function(response) {
@@ -78,12 +79,24 @@ function createCourse(data, callback) {
 // handle form data
 
 function handleCreateForm() {
-    var createBtn = document.querySelector('#create');
+
+    let createBtn = document.querySelector('#create');
     createBtn.onclick = function() {
+        // var fullPath = document.getElementById('upload').value;
+        // if (fullPath) {
+        //     var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+        //     var filename = fullPath.substring(startIndex);
+        //     if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+        //         filename = filename.substring(1);
+        //     }
+        // }
+
         var title = document.querySelector('input[name="title"]').value;
         var excerpt = document.querySelector('input[name="excerpt"]').value;
         var content = document.querySelector('textarea[name="content"]').value;
-        var image = document.querySelector('input[name="image"]').value;
+        // var content = document.querySelector('textarea[name="content"]').value;
+        // var image = document.querySelector('input[name="image"]').value;
+        var image = document.querySelector('input[type="file"]')
         var user_id = document.querySelector('input[name="user_id"]').value;
         var cate_id = document.querySelector('select[name="cate_id"]').value;
 

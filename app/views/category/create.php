@@ -1,73 +1,66 @@
-<?php
 
-namespace app\views\category;
-?>
-
-<?php require_once dirname(__FILE__) . '../../theme/header_script.php' ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../output/font/css/all.css">
-</head>
-
-<body>
-
-    <body>
-        <div class="container-fluid">
-            <h2>Add Category</h2>
-            <p>Create a new category with this form</p>
-            <div>
-                <label>name</label>
-                <input type="text" class="form-control" name="name">
+<?php require_once dirname(__FILE__) . '../../theme/header.php' ?>
+    <a href="" class="btn btn-light"> Back</a>
+    <div class="card card-body bg-light mt-5">
+        <h2>Add Categories</h2>
+        <p>Create a category with this form</p>
+        <form>
+            <div class="form-group">
+                <label>Category Name <sup>*</sup></label>
+                <input type="text" name="cate_name" class="form-control form-control-lg">
             </div>
+
+            <label>Chose Parent Category</label>
+            <select name="parent_id">
+                <?php
+                echo $categories;
+                ?>
+            </select>
+
+            <br/>
+
             <div>
                 <button id="create" class="btn btn-primary">Create</button>
             </div>
-        </div>
-    </body>
-</body>
+
+            <br/>
+        </form>
+
+    </div>
+<?php //require ('../theme/footer.php');?>
+    <?php require_once dirname(__FILE__) . '../../theme/footer.php' ?>
 <script>
-    var coursesCreateAPI = 'http://localhost:8000/api/admin/category';
+    var categoriesCreateAPI = 'http://localhost:8000/api/admin/category';
 
     function start() {
         handleCreateForm();
     }
     start();
 
-    function createCourse(data, callback) {
+    function createCategory(data) {
         var options = {
             method: 'POST',
             body: JSON.stringify(data)
         }
-        fetch(coursesCreateAPI, options)
+        fetch(categoriesCreateAPI, options)
             .then(function(response) {
                 response.json
             })
-            .then(callback);;
-    }
-
-    function renderCourses(courses) {
-
     }
 
     function handleCreateForm() {
         var createBtn = document.querySelector('#create');
         createBtn.onclick = function() {
-            var name = document.querySelector('input[name="name"]').value;
+            var cate_name = document.querySelector('input[name="cate_name"]').value;
+            // console.log(cate_name);
+            var parent_id = document.querySelector('select[name="parent_id"]').value;
+            // console.log(parent_id);
             var formData = {
-                name: name,
+                cate_name: cate_name,
+                parent_id:parent_id
             }
-            createCourse(formData, function() {
-                getCourses(renderCourses);
-            })
+            createCategory(formData);
             window.location = ('http://localhost:8000/admin/categorydashboard');
         }
     }
 </script>
-
-</html>

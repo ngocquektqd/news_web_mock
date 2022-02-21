@@ -51,7 +51,14 @@ class HomeController extends BaseController
     }
     public function createCategory()
     {
-        return $this->view('category.create');
+        $categories = $this->category->getCategories();
+
+        $listCate = $this->showCategories($categories);
+        $data= [
+            'categories'=>$listCate
+        ];
+//        print_r($categories);
+        return $this->view('category.create', $data);
     }
     public function updateCategory()
     {

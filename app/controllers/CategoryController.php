@@ -63,7 +63,8 @@ class CategoryController
 
         // return $data[$filed] ? htmlspecialchars($data[$filed]) : '';
 
-        $this->category->name = $data->name;
+        $this->category->cate_name = $data->cate_name;
+        $this->category->parent_id = $data->parent_id;
 
         if ($this->category->create()) {
             echo json_encode(

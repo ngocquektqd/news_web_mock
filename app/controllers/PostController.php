@@ -24,10 +24,7 @@ class PostController extends BaseController
         $this->post = new Post($db);
 //        $this->category = new Category($db);
 //        $this->user = new User($db);
-//        $this->category = new Category($db);
-//        $categories = $this->category->getCategories();
-//        $listCate = $this->showCategories($categories);
-//        $this->view('../views/post/create.php',$listCate);
+
     }
 
     public function index()
@@ -80,11 +77,15 @@ class PostController extends BaseController
         $this->post->excerpt = $data->excerpt;
         $this->post->content = $data->content;
         $this->post->image = $data->image;
+//        $this->post->image = $data->$_FILES['image']['name'];
         $this->post->user_id = $data->user_id;
         $this->post->cate_id = $data->cate_id;
 
-//        echo json_encode($this->post->create());
-//        die('success');
+//        $target_dir = "C:/xampp/htdocs/project/output/image/";
+//        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+       
+//        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+//        move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 
         if ($this->post->create()) {
             echo json_encode(
