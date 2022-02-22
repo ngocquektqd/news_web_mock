@@ -1,9 +1,9 @@
 var listPostsApi = 'http://localhost:8000/api/post';
-var coursesDeleteAPI = 'http://localhost:8000/admin/post/';
+var PostDeleteAPI = 'http://localhost:8000/admin/post/';
 
 function start() {
     getPosts(renderPosts);
-    handleDeleteCourse(id);
+    handleDeletePost(id);
 
 }
 start();
@@ -34,19 +34,19 @@ function renderPosts(posts){
             <td><span>${post.cate_id}</span></td>
             <td>
             <a href="./post/${post.article_id}" class="btn btn-dark" style="width: 100px">Edit</a>
-            <a type="button" class="btn btn-danger" id="btnDelete" style="width: 100px" onclick="handleDeleteCourse(${post.article_id})  ">Delelte</a>
-            <a href="/post/${post.article_id}" type="button" class="btn btn-dark" style="width: 100px">Details</a></td>
+            <a type="button" class="btn btn-danger" id="btnDelete" style="width: 100px" onclick="handleDeletePost(${post.article_id})  ">Delelte</a>
+            <a href="/admin/post/detail/${post.article_id}" type="button" class="btn btn-dark" style="width: 100px">Detail</a></td>
             </tr>
             `
     });
     listPostsBlock.innerHTML = htmls.join('');
 }
 
-function handleDeleteCourse(id) {
+function handleDeletePost(id) {
     var options = {
         method: 'DELETE',
     }
-    fetch(coursesDeleteAPI + '/' + id, options)
+    fetch(PostDeleteAPI + '/' + id, options)
         .then(function(response) {
             response.json
         })

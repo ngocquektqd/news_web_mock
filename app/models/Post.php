@@ -32,47 +32,76 @@ class Post
         return $stmt;
     }
 
-
-    function get_post_by_category(){
-        $query = 'SELECT c.name as category_name, p.id, p.category_id, p.title, p.body, p.author, p.created_at,p.image
-        FROM ' . $this->table . ' p
-        LEFT JOIN
-          categories c ON p.category_id = c.id
-            WHERE p.category_id = ?
-          ORDER BY
-            p.created_at DESC';
+    public function getPostById(){
+        $query ='SELECT * FROM articles INNER JOIN categories ON articles.cate_id = categories.cate_id
+                    INNER  JOIN users ON articles.user_id =users.user_id
+                    WHERE article_id = ? LIMIT 0,1';
         $stmt = $this->conn->prepare($query);
 
-        $stmt->bindParam(1, $this->category_id);
-
+        $stmt->bindParam(1, $this->article_id);
         $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        return $result;
+        
+        
 
-        return $stmt;
-
+//        $this->title = $row['title'];
+//        $this->excerpt = $row['excerpt'];
+//        $this->content = $row['content'];
+//        $this->image = $row['image'];
+//        $this->created_at = $row['created_at'];
+//        $this->user_id = $row['user_id'];
+//        $this->cate_id = $row['cate_id'];
+//        $this->title = $row['title'];
+//        $this->body = $row['body'];
+//        $this->author = $row['author'];
+//        $this->category_id = $row['category_id'];
+//        $this->image = $row['image'];
+//        $this->category_name = $row['category_name'];
     }
 
 
-    public function read_single()
-    {
-        $query = 'SELECT c.name as category_name, p.id, p.category_id, p.title, p.body, p.author, p.created_at,p.image
-                                        FROM ' . $this->table . ' p
-                                        LEFT JOIN
-                                          categories c ON p.category_id = c.id
-                                        WHERE
-                                          p.id = ?
-                                        LIMIT 0,1';
+//    function get_post_by_category(){
+//        $query = 'SELECT c.name as category_name, p.id, p.category_id, p.title, p.body, p.author, p.created_at,p.image
+//        FROM ' . $this->table . ' p
+//        LEFT JOIN
+//          categories c ON p.category_id = c.id
+//            WHERE p.category_id = ?
+//          ORDER BY
+//            p.created_at DESC';
+//        $stmt = $this->conn->prepare($query);
+//
+//        $stmt->bindParam(1, $this->category_id);
+//
+//        $stmt->execute();
+//
+//        return $stmt;
+//
+//    }
 
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(1, $this->id);
-        $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $this->title = $row['title'];
-        $this->body = $row['body'];
-        $this->author = $row['author'];
-        $this->category_id = $row['category_id'];
-        $this->image = $row['image'];
-        $this->category_name = $row['category_name'];
-    }
+
+//    public function read_single()
+//    {
+//        $query = 'SELECT c.name as category_name, p.id, p.category_id, p.title, p.body, p.author, p.created_at,p.image
+//                                        FROM ' . $this->table . ' p
+//                                        LEFT JOIN
+//                                          categories c ON p.category_id = c.id
+//                                        WHERE
+//                                          p.id = ?
+//                                        LIMIT 0,1';
+//
+//        $stmt = $this->conn->prepare($query);
+//        $stmt->bindParam(1, $this->id);
+//        $stmt->execute();
+//        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+//        $this->title = $row['title'];
+//        $this->body = $row['body'];
+//        $this->author = $row['author'];
+//        $this->category_id = $row['category_id'];
+//        $this->image = $row['image'];
+//        $this->category_name = $row['category_name'];
+//    }
 
     public function create()
     {
@@ -87,30 +116,21 @@ class Post
         $this->user_id = htmlspecialchars(strip_tags($this->user_id));
         $this->cate_id = htmlspecialchars(strip_tags($this->cate_id));
 
-//        $data = [
-//            'title'=>$this->title,
-//            'excerpt'=>$this->excerpt,
-//            'content'=>$this->content,
-//            'image'=>$this->image,
-//            'user_id'=>$this->user_id,
-//            'cate_id'=>$this->cate_id
-//        ];
-
         $stmt->bindParam(':title', $this->title);
         $stmt->bindParam(':excerpt', $this->excerpt);
         $stmt->bindParam(':content', $this->content);
         $stmt->bindParam(':image', $this->image);
         $stmt->bindParam(':user_id', $this->user_id);
         $stmt->bindParam(':cate_id', $this->cate_id);
+        $stmt->execute();
 
-
-        if ($stmt->execute()) {
-            return true;
-        }
-
-        printf("Error: %s.\n", $stmt->error);
-
-        return false;
+//        if ($stmt->execute()) {
+//            return true;
+//        }
+//
+//        printf("Error: %s.\n", $stmt->error);
+//
+//        return false;
     }
 
     public function update()

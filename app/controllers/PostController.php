@@ -77,6 +77,7 @@ class PostController extends BaseController
         $this->post->excerpt = $data->excerpt;
         $this->post->content = $data->content;
         $this->post->image = $data->image;
+//        $this->post->image = $data->image;
 //        $this->post->image = $data->$_FILES['image']['name'];
         $this->post->user_id = $data->user_id;
         $this->post->cate_id = $data->cate_id;
@@ -96,6 +97,39 @@ class PostController extends BaseController
                 array('message' => 'Post Not Created')
             );
         }
+    }
+    
+    public function getPostById(){
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
+
+        $url =$_SERVER['REQUEST_URI'];
+        $getId = explode('/',$url);
+        $this->post->article_id = $getId[4];
+        $result = $this->post->getPostById();
+        echo json_encode($result);
+//        $num = $result->rowCount();
+//        if($num>0){
+//            $post_arr = [];
+//            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+//                extract($row);
+//
+//                $post_item = [
+//                'article_id' => $this->post->article_id,
+//                'title' => $this->post->title,
+//                'excerpt' => $this->post->excerpt,
+//                'content' => $this->post->content,
+//                'image' => $this->post->image,
+//                'created_at' => $this->post->created_at,
+//                'user_id' => $this->post->user_id,
+//                'cate_id' => $this->post->cate_id,
+//                ];
+//
+//                array_push($post_arr, $post_item);
+//            }
+//            echo json_encode($post_arr);
+//        }
+
     }
 
 //    public function readSingle()

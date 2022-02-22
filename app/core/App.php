@@ -19,7 +19,9 @@ Router::get('/', 'HomeController@index');
 Router::get('/admin', 'HomeController@Dashbroad');
 Router::get('/admin/post', 'HomeController@create');
 Router::get('/admin/post/{id}', 'HomeController@update');
-Router::get('/admin/postdashboard', 'HomeController@PostDashborad');
+//Que cmt
+//Router::get('/admin/postdashboard', 'HomeController@PostDashborad');
+
 Router::get('/admin/categorydashboard', 'HomeController@CatDashborad');
 Router::get('/admin/category', 'HomeController@createCategory');
 Router::get('/admin/category/{id}', 'HomeController@updateCategory');
@@ -31,6 +33,10 @@ Router::get('/post/category/{id}', 'HomeController@postbyid');
 // Post
 
 Router::get('/api/post', 'PostController@index');
+
+//Post' Que
+Router::get('/api/post/detail/{id}','PostController@getPostById');
+Router::get('/admin/post/detail/{id}','HomeController@postDetail');
 
 // api call details
 Router::get('/post/{id}', 'PostController@readSingle');

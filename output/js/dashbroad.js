@@ -39,8 +39,8 @@
             <td>
             <a href="./post/${post.article_id}" class="btn btn-dark">Edit</a>
             <a type="button" class="btn btn-danger" id="btnDelete" onclick="handleDeleteCourse(${post.article_id}) ">Delelte</a>
-            <a href="/post/${post.article_id}" type="button" class="btn btn-dark">Details</a></td>
-            </tr>
+            <a href="admin/post/${post.article_id}" type="button" class="btn btn-dark">Details</a></td>
+            </tr> 
             `
         });
         listPostsBlock.innerHTML = htmls.join('');

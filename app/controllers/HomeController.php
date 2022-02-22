@@ -31,15 +31,19 @@ class HomeController extends BaseController
     {
         return $this->view('client.categorydetail');
     }
+    
+    //Que
+    //Post view
+    public function postDetail(){
+        return $this->view('post.detail');
+    }
     public function Dashbroad()
     {
         return $this->view('dashbroad.PostDashborad');
     }
+    //Que
     public function create()
     {
-//        $database = new Database();
-//        $db = $database->connect();
-//        $this->category = new Category($db);
         $categories = $this->category->getCategories();
         
         $listCate = $this->showCategories($categories);
@@ -49,6 +53,8 @@ class HomeController extends BaseController
 
         return $this->view('post.create', $data);
     }
+    
+    //Que
     public function createCategory()
     {
         $categories = $this->category->getCategories();
@@ -57,7 +63,6 @@ class HomeController extends BaseController
         $data= [
             'categories'=>$listCate
         ];
-//        print_r($categories);
         return $this->view('category.create', $data);
     }
     public function updateCategory()

@@ -13,22 +13,22 @@ function start() {
 start();
 
 // get all data
-function getCourses(callback) {
-    fetch(coursesGetAllAPI)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(callback);
-}
+// function getCourses(callback) {
+//     fetch(coursesGetAllAPI)
+//         .then(function(response) {
+//             return response.json();
+//         })
+//         .then(callback);
+// }
 
 // get detail
-function getCourseID(id) {
-    fetch(coursesGetIDAPI + '/' + id)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(callback);
-}
+// function getCourseID(id) {
+//     fetch(coursesGetIDAPI + '/' + id)
+//         .then(function(response) {
+//             return response.json();
+//         })
+//         .then(callback);
+// }
 
 // create new data
 
@@ -36,18 +36,18 @@ function getCourseID(id) {
 
 // delete data
 
-function handleDeleteCourse(id) {
-    var options = {
-        method: 'DELETE',
-    }
-    fetch(coursesDeleteAPI + '/' + id, options)
-        .then(function(response) {
-            response.json
-        })
-        .then(function() {
-            getCourses(renderCourses);
-        });;
-}
+// function handleDeleteCourse(id) {
+//     var options = {
+//         method: 'DELETE',
+//     }
+//     fetch(coursesDeleteAPI + '/' + id, options)
+//         .then(function(response) {
+//             response.json
+//         })
+//         .then(function() {
+//             getCourses(renderCourses);
+//         });;
+// }
 
 // function updateCourse(id, data) {
 //     var options = {
@@ -67,8 +67,7 @@ function handleDeleteCourse(id) {
 function createCourse(data, callback) {
     var options = {
         method: 'POST',
-        body: JSON.stringify(data),
-        // body: formData,
+        body: JSON.stringify(data)
     }
     fetch(coursesCreateAPI, options)
         .then(function(response) {
@@ -80,7 +79,7 @@ function createCourse(data, callback) {
 
 function handleCreateForm() {
 
-    let createBtn = document.querySelector('#create');
+    var createBtn = document.querySelector('#create');
     createBtn.onclick = function() {
         // var fullPath = document.getElementById('upload').value;
         // if (fullPath) {
@@ -96,7 +95,7 @@ function handleCreateForm() {
         var content = document.querySelector('textarea[name="content"]').value;
         // var content = document.querySelector('textarea[name="content"]').value;
         // var image = document.querySelector('input[name="image"]').value;
-        var image = document.querySelector('input[type="file"]')
+        var image = document.querySelector('input[name="image"]').value;
         var user_id = document.querySelector('input[name="user_id"]').value;
         var cate_id = document.querySelector('select[name="cate_id"]').value;
 
