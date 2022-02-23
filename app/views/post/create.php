@@ -23,6 +23,7 @@ namespace app\views\post;
 </head>
 
 <body>
+<?php require_once dirname(__FILE__) . './../theme/navbar.php' ?>
     <div class="card card-body bg-light mt-5">
         <h2>Add Article</h2>
         <p>Create a new article with this form</p>

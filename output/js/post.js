@@ -26,14 +26,14 @@ function renderPosts(posts){
             <td><span>${post.article_id}</span></td>
             <td><span>${post.title}</span></td>
             <td><span>${post.excerpt}</span> </td>
-            <td><span>${post.content}</span> </td>
+          
             <td><img src="${post.image}"></img> </td>
             <td><span>${post.created_at}</span></td>
             <td><span>${post.updated_at}</span></td>
             <td><span>${post.user_id}</span></td>
             <td><span>${post.cate_id}</span></td>
             <td>
-            <a href="./post/${post.article_id}" class="btn btn-dark" style="width: 100px">Edit</a>
+            <a href="/admin/post/edit/${post.article_id}" class="btn btn-dark" style="width: 100px">Edit</a>
             <a type="button" class="btn btn-danger" id="btnDelete" style="width: 100px" onclick="handleDeletePost(${post.article_id})  ">Delelte</a>
             <a href="/admin/post/detail/${post.article_id}" type="button" class="btn btn-dark" style="width: 100px">Detail</a></td>
             </tr>

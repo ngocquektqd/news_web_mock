@@ -19,8 +19,6 @@ Router::get('/', 'HomeController@index');
 Router::get('/admin', 'HomeController@Dashbroad');
 Router::get('/admin/post', 'HomeController@create');
 Router::get('/admin/post/{id}', 'HomeController@update');
-//Que cmt
-//Router::get('/admin/postdashboard', 'HomeController@PostDashborad');
 
 Router::get('/admin/categorydashboard', 'HomeController@CatDashborad');
 Router::get('/admin/category', 'HomeController@createCategory');
@@ -38,8 +36,11 @@ Router::get('/api/post', 'PostController@index');
 Router::get('/api/post/detail/{id}','PostController@getPostById');
 Router::get('/admin/post/detail/{id}','HomeController@postDetail');
 
+Router::get('/api/post/edit/{id}','PostController@editPost');
+Router::get('/admin/post/edit/{id}','HomeController@editPost');
+
 // api call details
-Router::get('/post/{id}', 'PostController@readSingle');
+//Router::get('/post/{id}', 'PostController@readSingle');
 
 // Admin Post
 
@@ -54,7 +55,8 @@ Router::get('/api/category', 'CategoryController@index');
 Router::get('/api/category/{id}', 'CategoryController@readSingle');
 
 //admin Category
-Router::post('/api/admin/category', 'CategoryController@create');
+
+Router::post('/admin/category', 'CategoryController@create');
 Router::put('/api/admin/category/{id}', 'CategoryController@update');
 Router::delete('/api/admin/category/{id}', 'CategoryController@delete');
 

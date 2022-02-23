@@ -3,14 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="2d0853f6-3e64-4a78-b053-9d2bd60ca751" name="Changes" comment="project update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/core/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/App.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/post/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/theme/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/theme/navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/category/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/category/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dashbroad/CategoryDashborad.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashbroad/CategoryDashborad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/dashbroad/PostDashborad.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashbroad/PostDashborad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/post/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/post/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/post/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/post/detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/post/update.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/output/js/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/output/js/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/js/dashbroad.js" beforeDir="false" afterPath="$PROJECT_DIR$/output/js/dashbroad.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output/js/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/output/js/post.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +49,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../newswebsite" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -77,7 +81,8 @@
       <workItem from="1645407821723" duration="18569000" />
       <workItem from="1645432102995" duration="6481000" />
       <workItem from="1645451615911" duration="12428000" />
-      <workItem from="1645493610670" duration="13715000" />
+      <workItem from="1645493610670" duration="14839000" />
+      <workItem from="1645563279969" duration="9839000" />
     </task>
     <task id="LOCAL-00001" summary="Reup project Web News">
       <created>1645432776215</created>
@@ -120,7 +125,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/controllers/HomeController.php</url>
-          <line>53</line>
+          <line>51</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

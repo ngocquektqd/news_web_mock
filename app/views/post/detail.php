@@ -1,8 +1,3 @@
-<?php
-echo 'Đây là detail bài viết ';
-?>
-<?php
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,22 +21,23 @@ echo 'Đây là detail bài viết ';
 
     <div class="row">
         <div class = "col-md-6">
+            <button onclick="history.back()">Go Back</button>
             <h1>Post Detail</h1>
         </div>
     </div>
 
     <div class="container_fluid__inside">
-        <div class="right">
+        <div class="col-md-12">
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>article_id</th>
-                    <th>title</th>
-                    <th>excerpt</th>
-                    <th>content</th>
-                    <th>image</th>
-                    <th>created_at</th>
-                    <th>updated_at</th>
+                    <th>Article_id</th>
+                    <th>Title</th>
+                    <th>Excerpt</th>
+                    <th>Content</th>
+                    <th>Image</th>
+                    <th>Created_at</th>
+                    <th>Updated_at</th>
                     <th>User</th>
                     <th>Category</th>
                 </tr>
@@ -57,9 +53,8 @@ echo 'Đây là detail bài viết ';
 </div>
 <?php require_once dirname(__FILE__) . './../theme/footer_script.php' ?>
 </body>
-
-</html>
 <script>
+
     let url = location.href;
     console.log(url);
     var postDetailApi = 'http://localhost:8000/api/post/detail/'+url.split('detail/')[1];
@@ -73,27 +68,30 @@ echo 'Đây là detail bài viết ';
             .then(function(response) {
                 return response.json();
             })
-        .then(renderPosts);
+            .then(renderPosts);
     }
 
-    function renderPosts(posts){
+    function renderPosts(post){
         // console.log(posts);
         var listPostsBlock =
             document.querySelector('#postDetail');
         console.log(listPostsBlock);
         var htmls =  `
             <tr>
-            <td><span>${posts.article_id}</span></td>
-            <td><span>${posts.title}</span></td>
-            <td><span>${posts.excerpt}</span> </td>
-            <td><span>${posts.content}</span> </td>
-            <td><img src="${posts.image}"></img> </td>
-            <td><span>${posts.created_at}</span></td>
-            <td><span>${posts.updated_at}</span></td>
-            <td><span>${posts.user_name}</span></td>
-            <td><span>${posts.cate_name}</span></td>
+            <td><span>${post.article_id}</span></td>
+            <td><span>${post.title}</span></td>
+            <td><span>${post.excerpt}</span> </td>
+            <td><span>${post.content}</span> </td>
+            <td><img src="${post.image}"></img> </td>
+            <td><span>${post.created_at}</span></td>
+            <td><span>${post.updated_at}</span></td>
+            <td><span>${post.user_name}</span></td>
+            <td><span>${post.cate_name}</span></td>
             <td>
             </tr>            `
         listPostsBlock.innerHTML = htmls;
     }
+
 </script>
+</html>
+

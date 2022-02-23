@@ -77,18 +77,18 @@ class CategoryController
         }
     }
 
-    public function readSingle(){
-
-        $url = $_SERVER['REQUEST_URI'];
-        $getId = explode('/', $url);
-        $this->category->id = $getId[3];
-        $this->category->read_single();
-        $category_arr = array(
-            'id' => $this->category->id,
-            'name' => $this->category->name
-        );
-
-    }
+//    public function readSingle(){
+//
+//        $url = $_SERVER['REQUEST_URI'];
+//        $getId = explode('/', $url);
+//        $this->category->id = $getId[3];
+//        $this->category->read_single();
+//        $category_arr = array(
+//            'id' => $this->category->id,
+//            'name' => $this->category->name
+//        );
+//
+//    }
     public function delete(){
 
         $url = $_SERVER['REQUEST_URI'];

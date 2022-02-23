@@ -32,22 +32,22 @@
             </div>
         </div>
 
-        <div class="container_fluid__inside">
-            <div class="right">
+        <div class="container_fluid__inside" >
+            <div class="col-md-12">
                 <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>article_id</th>
-                            <th>title</th>
-                            <th>excerpt</th>
-                            <th>content</th>
-                            <th>image</th>
-                            <th>created_at</th>
-                            <th>updated_at</th>
+                    <thead >
+                        <trc>
+                            <th>Article_id</th>
+                            <th>Title</th>
+                            <th>Excerpt</th>
+<!--                            <th>content</th>-->
+                            <th>Image</th>
+                            <th>Created_at</th>
+                            <th>Updated_at</th>
                             <th>User</th>
                             <th>Category</th>
                             <th>Action</th>
-                        </tr>
+                        </trc>
                     </thead>
                     <tbody id="list-posts">
 
