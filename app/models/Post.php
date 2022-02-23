@@ -123,14 +123,7 @@ class Post
         $stmt->bindParam(':user_id', $this->user_id);
         $stmt->bindParam(':cate_id', $this->cate_id);
         $stmt->execute();
-
-//        if ($stmt->execute()) {
-//            return true;
-//        }
-//
-//        printf("Error: %s.\n", $stmt->error);
-//
-//        return false;
+        
     }
 
     public function update()

@@ -108,16 +108,36 @@ class PostController extends BaseController
         $this->post->article_id = $getId[4];
         $result = $this->post->getPostById();
         echo json_encode($result);
+
     }
     public  function editPost(){
         header('Access-Control-Allow-Origin: *');
         header('Content-Type: application/json');
-
+//
         $url =$_SERVER['REQUEST_URI'];
         $getId = explode('/',$url);
         $this->post->article_id = $getId[4];
         $result = $this->post->getPostById();
         echo json_encode($result);
+
+
+        $data = json_decode(file_get_contents("php://input"));
+        $this->post->title = $data->title;
+        $this->post->excerpt = $data->excerpt;
+        $this->post->content = $data->content;
+        $this->post->image = $data->image;
+        $this->post->cate_id = $data->cate_id;
+
+        if ($this->post->editPost()) {
+            echo json_encode(
+                array('message' => 'Post Updated')
+            );
+        } else {
+            echo json_encode(
+                array('message' => 'Post Not Updated')
+            );
+        }
+
     }
 
 //    public function readSingle()
