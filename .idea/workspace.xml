@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d0853f6-3e64-4a78-b053-9d2bd60ca751" name="Changes" comment="project update">
-      <change afterPath="$PROJECT_DIR$/app/views/post/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/js/edit.js" afterDir="false" />
+    <list default="true" id="2d0853f6-3e64-4a78-b053-9d2bd60ca751" name="Changes" comment="update detail, edit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/core/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/App.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/post/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/post/detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/post/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/post/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/user/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../newswebsite" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Compressed/jwt-master" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -73,7 +76,9 @@
       <workItem from="1645432102995" duration="6481000" />
       <workItem from="1645451615911" duration="12428000" />
       <workItem from="1645493610670" duration="14839000" />
-      <workItem from="1645563279969" duration="17411000" />
+      <workItem from="1645563279969" duration="17473000" />
+      <workItem from="1645603476324" duration="1003000" />
+      <workItem from="1645713289318" duration="8536000" />
     </task>
     <task id="LOCAL-00001" summary="Reup project Web News">
       <created>1645432776215</created>
@@ -96,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645575448756</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update detail, edit">
+      <created>1645600476198</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1645600476198</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +128,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Reup project Web News" />
     <MESSAGE value="project update" />
-    <option name="LAST_COMMIT_MESSAGE" value="project update" />
+    <MESSAGE value="update detail, edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="update detail, edit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

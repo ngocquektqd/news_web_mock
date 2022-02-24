@@ -121,22 +121,22 @@ class PostController extends BaseController
         echo json_encode($result);
 
 
-        $data = json_decode(file_get_contents("php://input"));
-        $this->post->title = $data->title;
-        $this->post->excerpt = $data->excerpt;
-        $this->post->content = $data->content;
-        $this->post->image = $data->image;
-        $this->post->cate_id = $data->cate_id;
+//        $data = json_decode(file_get_contents("php://input"));
+//        $this->post->title = $data->title;
+//        $this->post->excerpt = $data->excerpt;
+//        $this->post->content = $data->content;
+//        $this->post->image = $data->image;
+//        $this->post->cate_id = $data->cate_id;
 
-        if ($this->post->editPost()) {
-            echo json_encode(
-                array('message' => 'Post Updated')
-            );
-        } else {
-            echo json_encode(
-                array('message' => 'Post Not Updated')
-            );
-        }
+//        if ($this->post->editPost()) {
+//            echo json_encode(
+//                array('message' => 'Post Updated')
+//            );
+//        } else {
+//            echo json_encode(
+//                array('message' => 'Post Not Updated')
+//            );
+//        }
 
     }
 

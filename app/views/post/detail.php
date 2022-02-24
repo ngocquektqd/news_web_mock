@@ -26,28 +26,28 @@
         </div>
     </div>
 
-    <div class="container_fluid__inside">
-        <div class="col-md-12">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Article_id</th>
-                    <th>Title</th>
-                    <th>Excerpt</th>
-                    <th>Content</th>
-                    <th>Image</th>
-                    <th>Created_at</th>
-                    <th>Updated_at</th>
-                    <th>User</th>
-                    <th>Category</th>
-                </tr>
-                </thead>
-                <tbody id="postDetail">
-
-                </tbody>
-
-            </table>
-        </div>
+    <div class="container_fluid__inside" id="postDetail" >
+<!--        <div class="col-md-12">-->
+<!--            <table class="table table-striped">-->
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th>Article_id</th>-->
+<!--                    <th>Title</th>-->
+<!--                    <th>Excerpt</th>-->
+<!--                    <th>Content</th>-->
+<!--                    <th>Image</th>-->
+<!--                    <th>Created_at</th>-->
+<!--                    <th>Updated_at</th>-->
+<!--                    <th>User</th>-->
+<!--                    <th>Category</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody id="postDetail">-->
+<!---->
+<!--                </tbody>-->
+<!---->
+<!--            </table>-->
+<!--        </div>-->
     </div>
 
 </div>
@@ -77,18 +77,14 @@
             document.querySelector('#postDetail');
         console.log(listPostsBlock);
         var htmls =  `
-            <tr>
-            <td><span>${post.article_id}</span></td>
-            <td><span>${post.title}</span></td>
-            <td><span>${post.excerpt}</span> </td>
-            <td><span>${post.content}</span> </td>
-            <td><img src="${post.image}"></img> </td>
-            <td><span>${post.created_at}</span></td>
-            <td><span>${post.updated_at}</span></td>
-            <td><span>${post.user_name}</span></td>
-            <td><span>${post.cate_name}</span></td>
-            <td>
-            </tr>            `
+        <div class="bg-secondary text-white p-2 mb-3">
+        Writen by ${post.user_name} on ${post.created_at}
+        </div>
+        <p><h2>${post.cate_name}</h2></p>
+        <p><h2>${post.title}</h2></p>
+        <p>${post.content}</p>
+        <img src="${post.image}"></img>
+                       `
         listPostsBlock.innerHTML = htmls;
     }
 

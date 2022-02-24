@@ -39,9 +39,6 @@ Router::get('/admin/post/detail/{id}','HomeController@postDetail');
 Router::get('/api/post/edit/{id}','PostController@editPost');
 Router::get('/admin/post/edit/{id}','HomeController@editPost');
 
-// api call details
-//Router::get('/post/{id}', 'PostController@readSingle');
-
 // Admin Post
 
 Router::post('/api/admin/post', 'PostController@create');
@@ -59,6 +56,12 @@ Router::get('/api/category/{id}', 'CategoryController@readSingle');
 Router::post('/admin/category', 'CategoryController@create');
 Router::put('/api/admin/category/{id}', 'CategoryController@update');
 Router::delete('/api/admin/category/{id}', 'CategoryController@delete');
+
+//admin User
+Router::post('/api/admin/user', 'UserController@register');
+Router::get('/admin/user/register', 'HomeController@register');
+
+Router::get('/admin/user/login','HomeController@login');
 
 
 // $this->router->post('/signup', 'AdminController@signup');
